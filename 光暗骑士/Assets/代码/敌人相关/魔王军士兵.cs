@@ -8,7 +8,7 @@ public class 魔王军士兵 : 敌人
     {
         base.Awake();
         巡逻状态=new 巡逻状态();
-        Debug.log(“一样一样);
+        //有人曾在这里下毒
         //高玮杰在此
     }
 }
