@@ -58,7 +58,7 @@ public partial class @玩家输入控制: IInputActionCollection2, IDisposable
                     ""name"": ""跳跃"",
                     ""type"": ""Value"",
                     ""id"": ""88f3a8e9-70b1-42df-b9ef-4a04fec7aac2"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -67,7 +67,7 @@ public partial class @玩家输入控制: IInputActionCollection2, IDisposable
                     ""name"": ""光影切换"",
                     ""type"": ""Button"",
                     ""id"": ""96b3e446-9d28-493f-8649-6359d6e3d317"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
