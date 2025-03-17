@@ -27,13 +27,13 @@ public class 巡逻状态 : 基础状态
 
     public override void 物理判断()
     {
-        throw new System.NotImplementedException();
+       // throw new System.NotImplementedException();
     }
 
 
     public override void 退出()
     {
-        throw new System.NotImplementedException();
+      //  throw new System.NotImplementedException();
     }
 
    
