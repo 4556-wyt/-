@@ -765,11 +765,11 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  moveSpeed: 3
+  moveSpeed: 7
   idleTime: 7
   battleTime: 7
-  attackDistance: 2
-  attackCooldown: 5
+  attackDistance: 1.3
+  attackCooldown: 0.5
   lastTimeAttacked: 0
 --- !u!4 &436821405
 Transform:
