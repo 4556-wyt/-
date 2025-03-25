@@ -13,6 +13,12 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
 
+
+    [Header("Knockback info")]
+    [SerializeField] protected Vector2 knockbackDirection;
+    [SerializeField] protected float knockbackDuration;
+    protected bool isKnocked;
+
     #region Components
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -38,9 +44,18 @@ public class Entity : MonoBehaviour
     public virtual void Damage()
     {
         fX.StartCoroutine("FlashFX");
+        StartCoroutine("HitKnockback");
         Debug.Log(gameObject.name+"was Damage");
     }
 
+    protected virtual IEnumerator HitKnockback()
+    {
+        isKnocked = true;
+        rb.velocity = new Vector2(knockbackDirection.x-facingDir,knockbackDirection.y);
+
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnocked=false;
+    }
     #region Collision
     public virtual bool IsGroundDelected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDelected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
@@ -67,9 +82,18 @@ public class Entity : MonoBehaviour
     }
     #endregion
     #region Velocity
-    public void SetZeroVelocity() => rb.velocity = new Vector2(0, 0);
+    public void SetZeroVelocity()
+    {
+        if(isKnocked)
+            return;
+
+        rb.velocity = new Vector2(0, 0);
+    }
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
+        if(isKnocked)
+            return;
+
         FlipController(_xVelocity);
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
     }

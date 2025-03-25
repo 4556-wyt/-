@@ -21,6 +21,8 @@ public class PlayerGroundedState : PlayerState
     public override void Update()
     {
         base.Update();
+        if(Input.GetKeyDown(KeyCode.Q)) 
+            stateMachine.ChangeState(Player.counterAttack);
 
         if(Input.GetKeyDown(KeyCode.Mouse0) && Player.IsGroundDelected()) 
             stateMachine.ChangeState(Player.primaryAttack);

@@ -16,6 +16,8 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Enter();
 
+        xInput = 0;//需要用这个修正攻击方向的bug
+
       
         float attackDir=Player.facingDir;
         if(xInput!=0)
