@@ -54,3 +54,6 @@ TagManager:
   - name: Player
     uniqueID: 3545677141
     locked: 0
+  - name: PLANTS
+    uniqueID: 2525702947
+    locked: 0
