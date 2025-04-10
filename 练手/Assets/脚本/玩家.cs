@@ -97,7 +97,6 @@ public class 玩家 : 实体
             return;
         if (comboTimrWindow < 0)
             comboCounter = 0;
-
         isAttacking = true;
         comboTimrWindow = comboTime;
     }
@@ -135,7 +134,6 @@ public class 玩家 : 实体
         anim.SetInteger("comboCounter",comboCounter);
 
     }
-    
     private void FlipController()
     {
         if(rb.velocity.x > 0&&!facingRight)

@@ -24,7 +24,6 @@ public class ΚµΜε : MonoBehaviour
     {
         rb= GetComponentInChildren<Rigidbody2D>();
         anim= GetComponentInChildren<Animator>();
-
         if(wallCheck==null)
             wallCheck=transform;
     }
